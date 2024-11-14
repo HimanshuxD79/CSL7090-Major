@@ -1,7 +1,7 @@
 
 const dbName = "cryptoKeys";
 const storeName = "keys";
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://ztabackendapi.onrender.com";
 import * as forge from 'node-forge'
 
 const generateGroupKey = async () => {

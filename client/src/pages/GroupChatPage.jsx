@@ -10,7 +10,7 @@ const GroupChatPage = () => {
     const [userPrivateKey, setUserPrivateKey] = useState(null);
     const [groupKey, setGroupKey] = useState(null);
     const [groupAdminId, setGroupAdminId] = useState(null);
-    const baseUrl = "http://localhost:3000";
+    const baseUrl = "https://ztabackendapi.onrender.com";
 
     useEffect(() => {
         loadPrivateKey();

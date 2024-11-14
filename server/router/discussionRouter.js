@@ -169,7 +169,7 @@ router.get('/groupKey/:groupId', authenticate, async (req, res) => {
 
         // Find the encrypted group key for the user
         const userEncryptedKey = group.members.find(member => member.userId.toString() === req.user.id).encryptedGroupKey;
-        console.log("userEncryptedKey",userEncryptedKey)
+        // console.log("userEncryptedKey",userEncryptedKey)
         res.json({ encryptedGroupKey: userEncryptedKey });
     } catch (error) {
         res.status(500).send({ message: error.message });

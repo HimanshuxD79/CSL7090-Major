@@ -7,7 +7,7 @@ const Register = ({ onRegister }) => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    const baseUrl = "http://localhost:3000";
+    const baseUrl = "https://ztabackendapi.onrender.com";
 
     const generateKeyPair = () => {
         try {
@@ -65,14 +65,14 @@ const Register = ({ onRegister }) => {
                 },
                 body: JSON.stringify({ username, password, publicKey }),
             });
-
+            const registerData = await registerResponse.json();
             if (!registerResponse.ok) {
                 setErrorMessage(registerData.message || "Registration failed.");
                 return;
             }
 
-            const registerData = await registerResponse.json();
-            console.log("Registration info: " + registerData.message);
+            
+            // console.log("Registration info: " + registerData.message);
 
             // If registration is successful, proceed to login
             if (registerResponse.ok) {

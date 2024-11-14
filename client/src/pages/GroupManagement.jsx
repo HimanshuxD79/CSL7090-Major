@@ -5,7 +5,7 @@ import { getPrivateKey, fetchUserPublicKey, encryptWithPublicKey, fetchAndDecryp
 const GroupManagement = ({ userId }) => {
     const [groupName, setGroupName] = useState('');
     const [groups, setGroups] = useState([]); // State to store groups
-    const baseUrl = "http://localhost:3000";
+    const baseUrl = "https://ztabackendapi.onrender.com";
 
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
