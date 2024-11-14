@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-
+import { storePrivateKey } from "../cryptoUtils"
 const Login = ({ onLogin }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [privateKey, setPrivateKey] = useState('');
     const baseUrl = "http://localhost:3000";
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -26,6 +27,9 @@ const Login = ({ onLogin }) => {
 
                 if (onLogin) {
                     onLogin(username, password);
+                }
+                if (privateKey) {
+                    storePrivateKey(privateKey);
                 }
                 window.location = "/groups"
 
@@ -59,6 +63,13 @@ const Login = ({ onLogin }) => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
+                    style={styles.input}
+                />
+                <input
+                    type="text"
+                    value={privateKey}
+                    onChange={(e) => setPrivateKey(e.target.value)}
+                    placeholder="Enter your private key"
                     style={styles.input}
                 />
                 <button onClick={handleLogin} style={styles.button}>Login</button>
