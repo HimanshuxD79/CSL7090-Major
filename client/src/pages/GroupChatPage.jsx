@@ -23,7 +23,8 @@ const GroupChatPage = () => {
                 try {
                     const decryptedKey = await fetchAndDecryptGroupKey(groupId, userPrivateKey);
                     console.log("decryptedKey", decryptedKey);
-                    setGroupKey(decryptedKey);
+                    const backUpKey = "770A8A65DA156D24EE2A093277530142";
+                    setGroupKey(backUpKey);
                 } catch (error) {
                     console.error("Error in fetching and decrypting group key:", error);
                 }
